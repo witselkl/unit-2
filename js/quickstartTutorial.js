@@ -1,7 +1,7 @@
 //Leaflet quickstart
 /* Example from Leaflet Quick Start Guide*/
 
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+var mymap = L.map('map').setView([51.505, -0.09], 13);
 
 //add tile layer...replace project id and accessToken with your own
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -12,9 +12,11 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 // }).addTo(mymap);
 
 //Example 1.1 line 5...add tile layer
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-}).addTo(map);
+});
+
+tileLayer.addTo(map);
 
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
