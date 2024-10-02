@@ -13,6 +13,13 @@ var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
 //Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
 L.geoJSON(geojsonFeature).addTo(map);
 
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
 var geojsonFeature = {
     "type": "Feature",
     "properties": {
@@ -25,6 +32,10 @@ var geojsonFeature = {
         "coordinates": [-104.99404, 39.75621]
     }
 };
+
+L.geoJSON(geojsonFeature, {
+    onEachFeature: onEachFeature
+}).addTo(map);
 
 //Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
 L.geoJSON(geojsonFeature).addTo(map);
@@ -106,29 +117,7 @@ L.geoJSON(someGeojsonFeature, {
     }
 }).addTo(map);
 
-function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent);
-    }
-}
 
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "Coors Field",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-104.99404, 39.75621]
-    }
-};
-
-L.geoJSON(geojsonFeature, {
-    onEachFeature: onEachFeature
-}).addTo(map);
 
 //Used to open popups in certain places of the map
 var popup = L.popup()
