@@ -8,7 +8,7 @@ var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 tileLayer.addTo(mymap);
 
 // Not a method but a function... L.Marker is used to display clickable/draggable icons on the map
-//var marker = L.marker([51.5, -0.09]).addTo(mymap);
+var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
 
 var geojsonFeature = {
     "type": "Feature",
