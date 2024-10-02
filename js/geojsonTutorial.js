@@ -10,6 +10,8 @@ var geojsonFeature = {
         "coordinates": [-104.99404, 39.75621]
     }
 };
+
+//Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
 L.geoJSON(geojsonFeature).addTo(map);
 
 var myLines = [{
