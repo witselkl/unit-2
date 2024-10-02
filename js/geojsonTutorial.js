@@ -91,6 +91,21 @@ L.geoJSON(states, {
     }
 }).addTo(map);
 
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+L.geoJSON(someGeojsonFeature, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);
+
 //Used to open popups in certain places of the map
 var popup = L.popup()
     .setLatLng([39.75621, -104.99404])
