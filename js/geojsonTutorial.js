@@ -56,7 +56,7 @@ L.geoJSON(myLines, {
 
 //Used to open popups in certain places of the map
 var popup = L.popup()
-    .setLatLng([51.5, -0.09])
+    .setLatLng([39.75621, -104.99404])
     .setContent("I am a standalone popup.")
     .openOn(mymap);
 
