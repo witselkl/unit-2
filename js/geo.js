@@ -9,6 +9,13 @@ tileLayer.addTo(mymap);
 
 var marker = L.marker([39.75621, -104.99404]).addTo(map);
 
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+
 var geojsonFeature = {
     "type": "Feature",
     "properties": {
