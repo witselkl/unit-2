@@ -19,9 +19,9 @@ var circle = L.circle([39.75621, -104.99404], {
 
 //A class for drawing polygon overlays on a map. 
 var polygon = L.polygon([
-    [39.75629, -140.08],
-    [39.75625, -140.06],
-    [39.75621, -140.047]
+    [39.75629, -104.08],
+    [39.75625, -104.06],
+    [39.75621, -104.047]
 ]).addTo(mymap);
 
 marker.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
