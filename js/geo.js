@@ -28,15 +28,14 @@ L.geoJSON(myLines, {
 }).addTo(map);
 
 
-geojsonFeature.bindPopup("feature");
-geojsonMarkerOptions.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
+marker.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
 circle.bindPopup("I am a circle.");
 polygon.bindPopup("I am a polygon.");
 
 
 //Used to open popups in certain places of the map
 var popup = L.popup()
-    .setLatLng([39.75621, -104.99404])
+    .setLatLng([51.5, -0.09])
     .setContent("I am a standalone popup.")
     .openOn(mymap);
 
