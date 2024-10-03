@@ -7,14 +7,7 @@ var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 
 tileLayer.addTo(mymap);
 
-// Not a method but a function... L.Marker is used to display clickable/draggable icons on the map
-//var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
-
-//Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
-//L.geoJSON(geojsonFeature).addTo(map);
-
-var myLayer = L.geoJSON().addTo(map);
-myLayer.addData(geojsonFeature);
+var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -39,19 +32,6 @@ var geojsonFeature = {
 L.geoJSON(geojsonFeature, {
     onEachFeature: onEachFeature
 }).addTo(map);
-
-//Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
-//L.geoJSON(geojsonFeature).addTo(map);
-
-
-
-var myLines = [{
-    "type": "LineString",
-    "coordinates": [[-100, 40], [-105, 45], [-110, 55]]
-}, {
-    "type": "LineString",
-    "coordinates": [[-105, 40], [-110, 45], [-115, 55]]
-}];
 
 var myLines = [{
     "type": "LineString",
@@ -121,8 +101,19 @@ L.geoJSON(someGeojsonFeature, {
     pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
-}).addTo(map);
+}).addTo(map)
 
+// a class.. A class for drawing circle overlays on a map
+var circle = L.circle([39.75621, -104.99404], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+
+marker.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
 
 
 //Used to open popups in certain places of the map
