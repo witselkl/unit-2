@@ -10,23 +10,53 @@ tileLayer.addTo(mymap);
 var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
 
 // a class.. A class for drawing circle overlays on a map
-var circle = L.circle([39.75621, -104.99404], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(mymap);
+// var circle = L.circle([39.75621, -104.99404], {
+//     color: 'red',
+//     fillColor: '#f03',
+//     fillOpacity: 0.5,
+//     radius: 500
+// }).addTo(mymap);
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Coors Field",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+L.geoJSON(someGeojsonFeature, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);
 
 //A class for drawing polygon overlays on a map. 
-var polygon = L.polygon([
-    [39.75629, -104.08],
-    [39.75625, -104.06],
-    [39.75621, -104.047]
-]).addTo(mymap);
+// var polygon = L.polygon([
+//     [39.75629, -104.08],
+//     [39.75625, -104.06],
+//     [39.75621, -104.047]
+// ]).addTo(mymap);
 
-marker.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
+
+geojsonFeature.bindPopup("feature");
+geojsonMarkerOptions.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
 circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
+// polygon.bindPopup("I am a polygon.");
 
 
 //Used to open popups in certain places of the map
