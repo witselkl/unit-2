@@ -53,9 +53,9 @@ L.geoJSON(someGeojsonFeature, {
 // ]).addTo(mymap);
 
 
-geojsonFeature.bindPopup("feature");
-geojsonMarkerOptions.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
-circleMarker.bindPopup("I am a circle.");
+//geojsonFeature.bindPopup("feature");
+//geojsonMarkerOptions.bindPopup("<strong>Hello world!</strong><br />I am a popup.").openPopup();
+//circleMarker.bindPopup("I am a circle.");
 // polygon.bindPopup("I am a polygon.");
 
 
