@@ -7,6 +7,8 @@ var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 
 tileLayer.addTo(mymap);
 
+var marker = L.marker([39.75621, -104.99404]).addTo(map);
+
 var geojsonFeature = {
     "type": "Feature",
     "properties": {
