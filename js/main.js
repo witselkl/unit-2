@@ -3,7 +3,7 @@
 
 // Initialize the map with 'L.map' and set the view of the map at a geographic center (latitude: 51.505, longitude: -0.09)
 // The 'setView' method also sets the zoom level to 13
-var mymap = L.map('map').setView([51.505, -0.09], 13);
+var mymap = L.map('map').setView([39.75621, -104.99404], 13);
 
 // Add a tile layer to the map using OpenStreetMap tiles
 // Tile layers are used to load and display tile images on the map
@@ -15,11 +15,11 @@ var tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 tileLayer.addTo(mymap);
 
 // Add a marker to the map at the specified coordinates (latitude: 51.5, longitude: -0.09)
-var marker = L.marker([51.5, -0.09]).addTo(mymap);
+var marker = L.marker([39.75621, -104.99404]).addTo(mymap);
 
 // Add a circle overlay to the map at the specified coordinates (latitude: 51.508, longitude: -0.11)
 // The 'color' sets the outline color, 'fillColor' sets the inside color, 'fillOpacity' controls the transparency of the fill, and 'radius' sets the circle's radius
-var circle = L.circle([51.508, -0.11], {
+var circle = L.circle([39.750588, -104.971646], {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5,
@@ -29,9 +29,9 @@ var circle = L.circle([51.508, -0.11], {
 // Add a polygon to the map with three coordinates (forming a triangle)
 // The polygon is created by connecting the points in the array
 var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
+    [39.764, -104.968891],
+    [39.767, -104.9670],
+    [39.763, -104.965]
 ]).addTo(mymap);
 
 // Bind a popup to the marker with the specified content
@@ -45,7 +45,7 @@ polygon.bindPopup("I am a polygon.");
 // Create a standalone popup and set its position using 'setLatLng' at the specified coordinates
 // 'setContent' defines the content of the popup, and 'openOn' attaches it to the map
 var popup = L.popup()
-    .setLatLng([51.5, -0.09])
+    .setLatLng([39.76583, -105.0128])
     .setContent("I am a standalone popup.")
     .openOn(mymap);
 
