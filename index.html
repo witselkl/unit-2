@@ -6,15 +6,23 @@
             <title>Leaflet Map</title>
 
         <!--put your external stylesheet links here-->
-        <link rel="stylesheet" href="lib/leaflet.css">
+        <!-- <link rel="stylesheet" href="lib/leaflet.css"> -->
+
+       <!-- Doing an external stylesheet Anwar -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        
+        <script type="text/javascript" src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
         <!--[if IE<9]>
             <link rel="stylesheet" href="css/style.ie.css">
         <![endif]-->
 
         <!-- Internal styles -->
-        <style>
+        
+        <!-- Nice job here iwth the fullscreen map. It looks great! Anwar -->
+        <style> 
             #map {
-                height: 100vh; /* Full height */
+                height: 100vh; /* Full height */ 
                 width: 100%;   /* Full width */
             }
         </style>
@@ -34,8 +42,10 @@
 
         <!--put your external script links here-->
         
-        <script type="text/javascript" src="js/leaflet-src.js"></script> -->
-        <script type="text/javascript" src="lib/leaflet-providers.js"></script> -->
+        <!-- I think this should go up higher in the head section. Anwar -->
+
+        <!-- <script type="text/javascript" src="js/leaflet-src.js"></script> -->
+        <!-- <script type="text/javascript" src="lib/leaflet-providers.js"></script> --> --> -->
 
         <!-- Script Overlap (GeoJSON vs Main): Right now, you are including both geojsonTutorial.js and main.js in your index.html. Since both scripts are working on the same map and manipulating the same objects (like map), they can interfere with each other. The best approach moving forward is to stop using geojsonTutorial.js and focus only on main.js, as this is where you'll be building your final project.
         Action: Remove the line that loads geojsonTutorial.js in index.html. Your current main.js has everything you need, so the other file is no longer necessary. -->

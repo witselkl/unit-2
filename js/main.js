@@ -53,7 +53,7 @@ function getData(){
         })
         .then(function(json){
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(json).addTo(map);
+            L.geoJson(json).addTo(mymap);
         })
 };
 
@@ -75,7 +75,7 @@ var geojsonFeature = {
 
 L.geoJSON(geojsonFeature, {
     onEachFeature: onEachFeature
-}).addTo(map);
+}).addTo(mymap);
 
 var myLines = [{
     "type": "LineString",
@@ -93,7 +93,7 @@ var myStyle = {
 
 L.geoJSON(myLines, {
     style: myStyle
-}).addTo(map);
+}).addTo(mymap);
 
 var states = [{
     "type": "Feature",
@@ -130,7 +130,7 @@ style: function(feature) {
         case 'Democrat':   return {color: "#0000ff"};
     }
    }
-}).addTo(map);
+}).addTo(mymap);
 
 //.then(function(json){
 var geojsonMarkerOptions = {
@@ -147,7 +147,7 @@ L.geoJson(json, {
     pointToLayer: function (feature, latlng){
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
-}).addTo(map);
+}).addTo(mymap);
 
 
 // Fetch and load GeoJSON data from the file 'MegaCities.geojson'
