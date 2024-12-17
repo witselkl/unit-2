@@ -3,7 +3,7 @@
 
 // Initialize the map with 'L.map' and set the view of the map at a geographic center (latitude: 51.505, longitude: -0.09)
 // The 'setView' method also sets the zoom level to 13
-var mymap = L.map('map').setView([39.75621, -104.99404], 13);
+var mymap = L.map('map').setView([39.75621, -104.99404], 7);
 
 // Add a tile layer to the map using OpenStreetMap tiles
 // Tile layers are used to load and display tile images on the map
